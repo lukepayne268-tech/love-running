@@ -43,6 +43,14 @@ header a {text-decoration: none;
     list-style-type: none;
   }
 
+  #menu > li {
+    margin-bottom: 1em;
+  }
+
+  .active {
+    border-bottom: 1px solid #3a3a3a;
+  }
+
 /*main content*/
 main {
   background-color: lightblue;
