@@ -14,7 +14,14 @@ body {
   flex-direction: column;
   /* Generic project styles */
   color: #3a3a3a;
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #252525;
 }
 
 /*header*/
@@ -29,59 +36,52 @@ header {
   justify-content: space-between;
   align-items: baseline;
 }
-header a {text-decoration: none;
+header a {
+  text-decoration: none;
   color: inherit;
 }
 
-  h1{
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color:#252525
 
-  }
-  #menu{ 
-    font-size: 110%;
-    letter-spacing: 4px;
-    list-style-type: none;
-  }
+#menu {
+  font-size: 110%;
+  letter-spacing: 4px;
+  list-style-type: none;
+}
 
-  #menu > li {
-    margin-bottom: 1em;
-  }
+#menu > li {
+  margin-bottom: 1em;
+}
 
-  .active {
-    border-bottom: 1px solid #3a3a3a;
-  }
+.active {
+  border-bottom: 1px solid #3a3a3a;
+}
 
-  /* Navbar styles for dropdown toggle*/
-  nav {
-    position: absolute;
-    background-color: #ffffff;
-    width: 100%;
-    left: 0;
-    padding:0 1rem;
-    box-shadow: 0 2px 2px #3a3a3a;
-    display: none;
-    top: 100%;
-  }
-  /*Nav toggle */
-  #nav-toggle:checked~nav {
-    display: block;
-   
-  }
+/* Navbar styles for dropdown toggle*/
+nav {
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  left: 0;
+  padding: 0 1rem;
+  box-shadow: 0 2px 2px #3a3a3a;
+  display: none;
+  top: 100%;
+}
+/*Nav toggle */
+#nav-toggle:checked ~ nav {
+  display: block;
+}
 
-  #nav-toggle {
-    display: none;
-  }
+#nav-toggle {
+  display: none;
+}
 
-  .nav-toggle-label {
-    font-size: 2rem;
-  }
+.nav-toggle-label {
+  font-size: 2rem;
+}
 
-  /*main content*/
+/*main content*/
 main {
-
   /*Make main element take up any surplus space to push footer down*/
   flex: 1 0 auto;
   margin-top: 47px;
@@ -92,8 +92,25 @@ main {
   height: 600px;
   width: 100%;
   background: url("../images/hero-image.webp") no-repeat center center/cover;
+  position: relative;
 }
 
+#cover-text {
+  /*Final rgba value sets the opacity of the background color, allowing the hero image to show through*/
+  background-color:rgba(241, 109, 107, .7) ;
+  font-size: 130%;
+  position: absolute;
+  bottom: 30px;
+  width: 80%;
+  min-height: 200px;
+  padding-top: 40px;
+  padding-left: 10px;
+
+}
+
+#cover-text > h2, #cover-text > h3 {
+  color: #ffffff
+}
 
 /*footer*/
 #social-networks {
@@ -110,7 +127,6 @@ main {
   color: #3a3a3a;
 }
 
-
 /* Media query: tablet and above (768px and up)*/
 @media screen and (min-width: 768px) {
   /*Header */
@@ -118,7 +134,7 @@ main {
     display: block;
     position: relative;
     box-shadow: none;
-    width:fit-content;
+    width: fit-content;
     padding-right: 1rem;
   }
 
@@ -126,28 +142,32 @@ main {
     display: flex;
   }
 
-  #menu > li {    
+  #menu > li {
     padding-left: 1rem;
-    
   }
   .nav-toggle-label {
     display: none;
   }
-#logo{
-  font-size: 280%;
-  line-height: 75px;
-  margin: 0 0.5rem;
-}
-/*Main content*/
-main {
-  /*Push main conent down to make room for the larger header*/
-  margin-top:79px;
-}
+  #logo {
+    font-size: 280%;
+    line-height: 75px;
+    margin: 0 0.5rem;
+  }
+  /*Main content*/
+  main {
+    /*Push main conent down to make room for the larger header*/
+    margin-top: 79px;
+  }
 
+  /*hero*/
+  #cover-text {
+    width: 300px;
+    right: 50px;
+  }
 }
 /* Larger screens (992px and up) */
 @media screen and (min-width: 992px) {
   #menu a:hover {
-     border-bottom: 1px solid #3a3a3a;
+    border-bottom: 1px solid #3a3a3a;
   }
 }
