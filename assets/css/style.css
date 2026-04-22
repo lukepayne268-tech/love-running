@@ -6,7 +6,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} /*general styles*/
+}
+
+/*general styles*/
 
 body {
   min-height: 100vh;
@@ -17,7 +19,9 @@ body {
   font-family: "lato", sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -25,7 +29,7 @@ h1, h2, h3 {
 }
 
 .hidden-heading {
-  display: none ;
+  display: none;
 }
 
 /*header*/
@@ -40,6 +44,7 @@ header {
   justify-content: space-between;
   align-items: baseline;
 }
+
 header a {
   text-decoration: none;
   color: inherit;
@@ -52,7 +57,7 @@ header a {
   list-style-type: none;
 }
 
-#menu > li {
+#menu>li {
   margin-bottom: 1em;
 }
 
@@ -71,8 +76,9 @@ nav {
   display: none;
   top: 100%;
 }
+
 /*Nav toggle */
-#nav-toggle:checked ~ nav {
+#nav-toggle:checked~nav {
   display: block;
 }
 
@@ -101,7 +107,7 @@ main {
 
 #cover-text {
   /*Final rgba value sets the opacity of the background color, allowing the hero image to show through*/
-  background-color:rgba(241, 109, 107, .7) ;
+  background-color: rgba(241, 109, 107, .7);
   font-size: 130%;
   position: absolute;
   bottom: 30px;
@@ -112,14 +118,15 @@ main {
 
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
   color: #ffffff
 }
 
 #reasons {
   margin: 20px auto 20px auto;
   width: 90%;
-  
+
 }
 
 #reasons h2 {
@@ -128,17 +135,17 @@ main {
   font-size: 280%;
 }
 
-#benefits-physical > div,
-#benefits-mental > div {
-    line-height: 20px;
-    margin-bottom: 20px;
+#benefits-physical>div,
+#benefits-mental>div {
+  line-height: 20px;
+  margin-bottom: 20px;
 }
 
 #benefits p {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
-#benefits > hr {
+#benefits>hr {
   border-top: #3a3a3a;
   margin: 5px 0;
 }
@@ -148,7 +155,7 @@ main {
   height: 90vw;
   width: 90vw;
   margin-bottom: 20px;
-/*Make the image circular*/
+  /*Make the image circular*/
   border-radius: 50%;
   max-width: 300px;
   max-height: 300px;
@@ -159,18 +166,19 @@ main {
   align-items: center;
   justify-content: center;
 }
+
 /*Meet-ups section*/
 
 #times {
-background: url("../images/dublin-city.webp") no-repeat center center/cover;
-/*handles responsivity without the need for a media query*/
-display: flex;
-flex-wrap: wrap;
+  background: url("../images/dublin-city.webp") no-repeat center center/cover;
+  /*handles responsivity without the need for a media query*/
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
 
-#times > div {
+#times>div {
   background-color: rgba(0, 0, 0, .6);
   color: #fafafa;
   text-align: center;
@@ -183,15 +191,16 @@ flex-wrap: wrap;
   border: 2px solid white;
 }
 
-#times  h3 {
+#times h3 {
   /*Override the heading color style set in general styyles*/
   color: #fafafa;
 
 }
+
 /*Gallery page*/
 #photos img {
   width: 100%;
-  line-height:1em
+  line-height: 1em
 }
 
 #photos {
@@ -200,6 +209,7 @@ flex-wrap: wrap;
 
 
 }
+
 /*footer*/
 #social-networks {
   text-align: center;
@@ -215,8 +225,18 @@ flex-wrap: wrap;
   color: #3a3a3a;
 }
 
+/*media query for large or landscape mobile screens (576px and up)*/
+@media screen and (min-width: 576px) {
+  #photos {
+    column-count: 2;
+    column-gap: 0;
+  }
+
+}
+
 /* Media query: tablet and above (768px and up)*/
 @media screen and (min-width: 768px) {
+
   /*Header */
   nav {
     display: block;
@@ -230,17 +250,20 @@ flex-wrap: wrap;
     display: flex;
   }
 
-  #menu > li {
+  #menu>li {
     padding-left: 1rem;
   }
+
   .nav-toggle-label {
     display: none;
   }
+
   #logo {
     font-size: 280%;
     line-height: 75px;
     margin: 0 0.5rem;
   }
+
   /*Main content*/
   main {
     /*Push main conent down to make room for the larger header*/
@@ -252,58 +275,72 @@ flex-wrap: wrap;
     width: 300px;
     right: 50px;
   }
+
   /*Reasons section*/
-  #benefits-physical, 
+  #benefits-physical,
   #benefits-mental {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
 
-  #benefits-physical > div, 
-  #benefits-mental > div {
+  #benefits-physical>div,
+  #benefits-mental>div {
     width: 75%;
   }
-  
-  #benefits-mental > div {
+
+  #benefits-mental>div {
     text-align: end;
     align-self: flex-end;
   }
+
+
 }
-/* Larger screens (992px and up) */
+
+/* Large device (Laptop and desktops screens, 992px and up) */
 @media screen and (min-width: 992px) {
   #menu a:hover {
     border-bottom: 1px solid #3a3a3a;
   }
 
+  /*Gallery*/
+  #photos {
+    column-count: 3;
+    column-gap: 0;
 
+  }
 
-}
-/* Extra large screens (1200px and up) */
-@media screen and (min-width: 1200px) {
-/* Reasons section */
-#benefits {
-  display: flex;
-  flex-direction: row;}
+  /* Extra large screens (1200px and up) */
+  @media screen and (min-width: 1200px) {
 
-#benefits > div  {
-  flex: 1;
-}
+    /* Reasons section */
+    #benefits {
+      display: flex;
+      flex-direction: row;
+    }
 
-#benefits-image {
-  order: 0
-}
-  
-#benefits-mental {
-  order: 1
-}
-#benefits-mental > div {
-  align-self: flex-start;
-}
-#benefits-physical > div {
-  align-self: flex-end;
-}
+    #benefits>div {
+      flex: 1;
+    }
 
+    #benefits-image {
+      order: 0
+    }
 
-}
+    #benefits-mental {
+      order: 1
+    }
 
+    #benefits-mental>div {
+      align-self: flex-start;
+    }
+
+    #benefits-physical>div {
+      align-self: flex-end;
+    }
+
+    #photos {
+      column-count: 4;
+      column-gap: 0;
+
+    }
